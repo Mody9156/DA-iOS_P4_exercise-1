@@ -63,14 +63,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23D168332B9B5BFF004903B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F90C7F02AC358B4005D888A /* ToDoItem.swift */,
+				2F90C7EE2AC357FC005D888A /* ToDoListRepository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23D168342B9B5C0B004903B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F90C7E22AC357C6005D888A /* ToDoListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23D168352B9B5C13004903B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F90C7F22AC358DB005D888A /* ToDoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2F21AFB72AC44D8B00964267 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				23D168332B9B5BFF004903B4 /* Model */,
+				23D168342B9B5C0B004903B4 /* View */,
+				23D168352B9B5C13004903B4 /* ViewModel */,
 				2F90C7E02AC357C6005D888A /* ToDoListApp.swift */,
-				2F90C7E22AC357C6005D888A /* ToDoListView.swift */,
-				2F90C7F22AC358DB005D888A /* ToDoListViewModel.swift */,
-				2F90C7EE2AC357FC005D888A /* ToDoListRepository.swift */,
-				2F90C7F02AC358B4005D888A /* ToDoItem.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
