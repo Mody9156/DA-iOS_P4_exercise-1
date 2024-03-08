@@ -5,7 +5,6 @@ struct ToDoListView: View {
     @State private var newTodoTitle = ""
     @State private var isShowingAlert = false
     @State private var isAddingTodo = false
-    
     // New state for filter index
     @State private var filterIndex = 0
     
@@ -14,6 +13,14 @@ struct ToDoListView: View {
             VStack {
                 // Filter selector
                 // TODO: - Add a filter selector which will call the viewModel for updating the displayed data
+                Picker("List",selection:$filterIndex ){
+                    Text("All").tag(0)
+                    Text("Done").tag(1)
+                    Text("No Done").tag(2)
+                }.pickerStyle(.segmented).onChange(of: filterIndex) { index in
+                     viewModel.applyFilter(at: index)
+                   
+                }
                 // List of tasks
                 List {
                     ForEach(viewModel.toDoItems) { item in
@@ -95,12 +102,12 @@ struct ToDoListView: View {
     }
 }
 
-struct ToDoListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ToDoListView(
-            viewModel: ToDoListViewModel(
-                repository: ToDoListRepository()
-            )
-        )
-    }
-}
+//struct ToDoListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ToDoListView(
+//            viewModel: ToDoListViewModel(
+//                repository: ToDoListRepository()
+//            )
+//        )
+//    }
+//}
